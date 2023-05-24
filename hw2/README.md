@@ -39,17 +39,17 @@ device driver major number : 242
 4. (On host side, in app folder) app 실행 파일 push
 
 : app 폴더에서 app 실행파일을 보드로 보내기 위해 adb push 를 진행한다.
-
-: $ adb push app /data/local/tmp
-
+'''
+$ adb push app /data/local/tmp
+'''
 5. (On host side, in module folder) dev_driver.ko 파일 push
 
 : app 폴더에서 dev_driver.ko 파일을 보드로 보내기 위해 adb push 를 진행한다.
-
-: $ adb push dev_driver.ko /data/local/tmp
-
+'''
+$ adb push dev_driver.ko /data/local/tmp
+'''
 6. (On the target board-side,in the Minicom) module insertion
-
+'''
   $ echo "7 6 1 7" > /proc/sys/kernel/printk // log level 변경
 
   $ cd /data/local/tmp //경로 변경
@@ -57,11 +57,11 @@ device driver major number : 242
   $ insmod dev_driver.ko // 모듈 삽입
 
   $ mknod dev_driver c 242 0 //device driver file 생성
-
+'''
 7.  (On the target board-side,in the Minicom) app 실행
-
+'''
   $ ./app TIMER_INTERVAL[1-100] TIMER_CNT[1-100] TIMER_INIT[0001-8000]
-
+'''
 : TIMER_INTERVAL: HZ 값 1~100 (0.1~10 초)
 
 : TIMER_CNT: 디바이스 출력 변경 횟수 (1~100)
@@ -72,10 +72,10 @@ device driver major number : 242
 
 ## 주의사항
 1. 학번과 이름은 고정되어 있으므로, 만약 해당 정보 수정시 driver.h 파일에 있는 학번과 이름의 길에 해당하는 매크로
-
+'''
   #define st_id_size 8
   #define name_size 13
-  
+'''
 값을 학번길이와 이름 길이에 맞게 수정해 주어야 한다.
 
 2. ./app 파일 실행시 넘겨주는 argument는 위에 명세한 조건에 반드시 맞도록 하여야 한다.
