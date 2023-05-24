@@ -1,4 +1,4 @@
-# embedded_system(cse4116)
+# EMBEDDED SYSTEM SOFTWARE (CSE4116)
 
 ## SILSUP
 
