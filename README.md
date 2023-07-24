@@ -12,6 +12,13 @@ silsup 5   :  Kernel Memory Allocation & Time Management
 
 silsup 6   :  Interrupt
 
+silsup 7   :  Android SDK
+
+silsup 8   :  Android Application Service & Thread
+
+silsup 9   :  NDK
+
+
 ## HOMEWORK
 
 hw 1 : Simple Key-Value Store(KVS)
